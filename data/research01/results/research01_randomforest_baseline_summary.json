@@ -1,0 +1,54 @@
+{
+  "purpose": "Original-data RandomForestClassifier baseline before generated anomaly augmentation.",
+  "result": {
+    "method": "Real anomaly only",
+    "model": "RandomForestClassifier",
+    "normal_train_used": 5000,
+    "real_anomaly_seed_used": 247,
+    "generated_anomaly_used": 0,
+    "total_train_rows": 5247,
+    "threshold_selected_on_real_validation": 0.9099999999999999,
+    "validation_f1": 0.7330960854092526,
+    "precision": 0.8551401869158879,
+    "recall": 0.6182432432432432,
+    "f1": 0.7176470588235294,
+    "auroc": 0.9589038769469649,
+    "auprc": 0.7999127147413426,
+    "pred_normal": 2867,
+    "pred_anomaly": 214,
+    "true_normal": 2785,
+    "true_anomaly": 296
+  },
+  "params": {
+    "n_estimators": 300,
+    "min_samples_leaf": 2,
+    "class_weight": "balanced_subsample"
+  },
+  "classification_report": {
+    "normal": {
+      "precision": 0.9605859783746076,
+      "recall": 0.9888689407540395,
+      "f1-score": 0.9745222929936306,
+      "support": 2785.0
+    },
+    "anomaly": {
+      "precision": 0.8551401869158879,
+      "recall": 0.6182432432432432,
+      "f1-score": 0.7176470588235294,
+      "support": 296.0
+    },
+    "accuracy": 0.9532619279454723,
+    "macro avg": {
+      "precision": 0.9078630826452477,
+      "recall": 0.8035560919986413,
+      "f1-score": 0.84608467590858,
+      "support": 3081.0
+    },
+    "weighted avg": {
+      "precision": 0.9504555160987942,
+      "recall": 0.9532619279454723,
+      "f1-score": 0.9498435947416507,
+      "support": 3081.0
+    }
+  }
+}

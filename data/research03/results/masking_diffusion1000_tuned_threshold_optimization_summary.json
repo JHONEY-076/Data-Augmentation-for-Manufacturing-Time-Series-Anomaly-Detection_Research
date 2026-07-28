@@ -1,0 +1,96 @@
+{
+  "claim_tested": "For the tuned Masking Diffusion 1000 RandomForest model, thresholds are selected on validation_windows and evaluated once on final_test_windows.",
+  "model": "RandomForestClassifier",
+  "method": "Masking Diffusion",
+  "generated_anomaly_used": 1000,
+  "research02_generation_summary": {
+    "generation_fix": "Generation follows the paper-style comparison: unmasked GT-GAN and Diffusion sample full windows from noise, while masking-based methods use real anomaly windows with structured masked-value restoration.",
+    "masking_strategy": "Masking-based methods use temporal block masking and feature-group masking instead of element-wise random masking. The observed seed values are preserved, and only masked time/feature regions are restored by the generator.",
+    "masking_diffusion_denoiser": "Masking Diffusion uses a GRU temporal denoiser conditioned on the masked seed window and the binary mask, rather than flattening the window into an MLP denoiser.",
+    "n_real": 247,
+    "n_generated_per_method": 1000,
+    "n_generated_shown_in_tsne": 247,
+    "temporal_block_ratio": 0.25,
+    "feature_group_ratio": 0.4,
+    "residual_scale": 0.35,
+    "quality_ranking": [
+      "Masking GT-GAN",
+      "Masking Diffusion",
+      "Diffusion",
+      "GT-GAN"
+    ]
+  },
+  "fixed_hyperparameters": {
+    "n_estimators": 300,
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "class_weight": {
+      "0": 1,
+      "1": 2
+    }
+  },
+  "precision_floor": 0.8,
+  "strategies": [
+    {
+      "strategy": "best_validation_f1",
+      "threshold": 0.83,
+      "validation_precision": 0.9185185185185185,
+      "validation_recall": 0.7560975609756098,
+      "validation_f1": 0.8294314381270903,
+      "validation_pred_normal": 1312,
+      "validation_pred_anomaly": 135,
+      "validation_true_normal": 1283,
+      "validation_true_anomaly": 164,
+      "final_precision": 0.9183673469387755,
+      "final_recall": 0.9121621621621622,
+      "final_f1": 0.9152542372881356,
+      "final_pred_normal": 2787,
+      "final_pred_anomaly": 294,
+      "final_true_normal": 2785,
+      "final_true_anomaly": 296,
+      "final_auroc": 0.9961491338735504,
+      "final_auprc": 0.9712915843090161
+    },
+    {
+      "strategy": "max_recall_with_validation_precision_at_least_0.80",
+      "threshold": 0.7899999999999999,
+      "validation_precision": 0.810126582278481,
+      "validation_recall": 0.7804878048780488,
+      "validation_f1": 0.7950310559006211,
+      "validation_pred_normal": 1289,
+      "validation_pred_anomaly": 158,
+      "validation_true_normal": 1283,
+      "validation_true_anomaly": 164,
+      "final_precision": 0.8348082595870207,
+      "final_recall": 0.956081081081081,
+      "final_f1": 0.8913385826771654,
+      "final_pred_normal": 2742,
+      "final_pred_anomaly": 339,
+      "final_true_normal": 2785,
+      "final_true_anomaly": 296,
+      "final_auroc": 0.9961491338735504,
+      "final_auprc": 0.9712915843090161
+    },
+    {
+      "strategy": "max_validation_recall",
+      "threshold": 0.48999999999999994,
+      "validation_precision": 0.3504273504273504,
+      "validation_recall": 1.0,
+      "validation_f1": 0.5189873417721519,
+      "validation_pred_normal": 979,
+      "validation_pred_anomaly": 468,
+      "validation_true_normal": 1283,
+      "validation_true_anomaly": 164,
+      "final_precision": 0.2808349146110057,
+      "final_recall": 1.0,
+      "final_f1": 0.43851851851851853,
+      "final_pred_normal": 2027,
+      "final_pred_anomaly": 1054,
+      "final_true_normal": 2785,
+      "final_true_anomaly": 296,
+      "final_auroc": 0.9961491338735504,
+      "final_auprc": 0.9712915843090161
+    }
+  ]
+}

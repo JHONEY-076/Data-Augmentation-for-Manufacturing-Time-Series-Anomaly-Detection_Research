@@ -1,0 +1,2 @@
+method,model,normal_train_used,real_anomaly_seed_used,generated_anomaly_used,total_train_rows,threshold_selected_on_real_validation,validation_f1,precision,recall,f1,auroc,auprc,pred_normal,pred_anomaly,true_normal,true_anomaly
+Real anomaly only,RandomForestClassifier,5000,247,0,5247,0.9099999999999999,0.7330960854092526,0.8551401869158879,0.6182432432432432,0.7176470588235294,0.9589038769469649,0.7999127147413426,2867,214,2785,296

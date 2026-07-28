@@ -1,0 +1,57 @@
+{
+  "generation_fix": "Generation follows the paper-style comparison: unmasked GT-GAN and Diffusion sample full windows from noise, while masking-based methods use real anomaly windows with structured masked-value restoration.",
+  "masking_strategy": "Masking-based methods use data-driven adaptive temporal block masking and feature-group masking instead of element-wise random masking. Time regions are sampled with higher probability when normal-anomaly distributional differences are larger, and feature groups are formed from anomaly-feature correlation and normal-anomaly feature differences. The observed seed values are preserved, and only masked time/feature regions are restored by the generator.",
+  "adaptive_masking": {
+    "strategy": "data_driven_adaptive_temporal_feature_group_masking",
+    "normal_sample_size": 5000,
+    "temporal_block_ratio": 0.25,
+    "feature_group_ratio": 0.4,
+    "block_len": 8,
+    "group_len": 2,
+    "top_time_starts": [
+      22,
+      21,
+      20,
+      2,
+      3
+    ],
+    "top_feature_groups": [
+      [
+        "RealPower",
+        "SetPower"
+      ],
+      [
+        "SetPower",
+        "Speed"
+      ],
+      [
+        "Speed",
+        "Length"
+      ],
+      [
+        "GateOnTime",
+        "SetPower"
+      ]
+    ],
+    "feature_scores": {
+      "RealPower": 0.5583903193473816,
+      "GateOnTime": 0.11019281297922134,
+      "SetPower": 0.12541624903678894,
+      "Speed": 0.12428056448698044,
+      "Length": 0.12437879294157028
+    }
+  },
+  "masking_diffusion_denoiser": "Masking Diffusion uses a GRU temporal denoiser conditioned on the masked seed window and the binary mask, rather than flattening the window into an MLP denoiser.",
+  "n_real": 247,
+  "n_generated_per_method": 1000,
+  "n_generated_shown_in_tsne": 247,
+  "temporal_block_ratio": 0.25,
+  "feature_group_ratio": 0.4,
+  "residual_scale": 0.35,
+  "quality_ranking": [
+    "Masking GT-GAN",
+    "Masking Diffusion",
+    "Diffusion",
+    "GT-GAN"
+  ]
+}

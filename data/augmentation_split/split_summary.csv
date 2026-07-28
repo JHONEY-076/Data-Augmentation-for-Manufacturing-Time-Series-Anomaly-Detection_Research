@@ -1,0 +1,5 @@
+split,windows,normal,anomaly
+normal_train,135730,135730,0
+anomaly_train_seed,247,0,247
+validation,1447,1283,164
+final_test,3081,2785,296

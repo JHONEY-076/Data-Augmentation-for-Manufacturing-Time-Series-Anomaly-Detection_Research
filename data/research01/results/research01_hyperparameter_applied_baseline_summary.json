@@ -1,0 +1,59 @@
+{
+  "purpose": "Original-data RandomForestClassifier baseline with the tuned hyperparameters selected from Masking Diffusion 1000 Research04 experiments, but without generated data.",
+  "result": {
+    "method": "Real anomaly only + tuned RF hyperparameters",
+    "model": "RandomForestClassifier",
+    "normal_train_used": 5000,
+    "real_anomaly_seed_used": 247,
+    "generated_anomaly_used": 0,
+    "total_train_rows": 5247,
+    "threshold_selected_on_real_validation": 0.82,
+    "validation_f1": 0.835016835016835,
+    "precision": 0.9434628975265018,
+    "recall": 0.902027027027027,
+    "f1": 0.9222797927461139,
+    "auroc": 0.9959065214226794,
+    "auprc": 0.9739440534920561,
+    "pred_normal": 2798,
+    "pred_anomaly": 283,
+    "true_normal": 2785,
+    "true_anomaly": 296
+  },
+  "params": {
+    "n_estimators": 300,
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "class_weight": {
+      "0": 1,
+      "1": 2
+    }
+  },
+  "classification_report": {
+    "normal": {
+      "precision": 0.9896354538956398,
+      "recall": 0.9942549371633752,
+      "f1-score": 0.9919398173025256,
+      "support": 2785.0
+    },
+    "anomaly": {
+      "precision": 0.9434628975265018,
+      "recall": 0.902027027027027,
+      "f1-score": 0.9222797927461139,
+      "support": 296.0
+    },
+    "accuracy": 0.98539435248296,
+    "macro avg": {
+      "precision": 0.9665491757110708,
+      "recall": 0.9481409820952011,
+      "f1-score": 0.9571098050243197,
+      "support": 3081.0
+    },
+    "weighted avg": {
+      "precision": 0.9851995315700102,
+      "recall": 0.98539435248296,
+      "f1-score": 0.9852473904058369,
+      "support": 3081.0
+    }
+  }
+}

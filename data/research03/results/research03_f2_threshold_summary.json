@@ -1,0 +1,156 @@
+{
+  "claim_tested": "Threshold is selected on real validation_windows by F2-score, which weights recall higher than precision without forcing recall to a fixed target.",
+  "model": "RandomForestClassifier",
+  "normal_train_used_each_method": 5000,
+  "real_anomaly_seed_used_each_method": 247,
+  "generated_anomaly_counts": [
+    50,
+    100,
+    200,
+    500,
+    1000
+  ],
+  "threshold_selection": "Best F2-score on real validation_windows only.",
+  "fbeta_beta": 2.0,
+  "research02_generation_summary": {
+    "generation_fix": "Generation follows the paper-style comparison: unmasked GT-GAN and Diffusion sample full windows from noise, while masking-based methods use real anomaly windows with structured masked-value restoration.",
+    "masking_strategy": "Masking-based methods use data-driven adaptive temporal block masking and feature-group masking instead of element-wise random masking. Time regions are sampled with higher probability when normal-anomaly distributional differences are larger, and feature groups are formed from anomaly-feature correlation and normal-anomaly feature differences. The observed seed values are preserved, and only masked time/feature regions are restored by the generator.",
+    "adaptive_masking": {
+      "strategy": "data_driven_adaptive_temporal_feature_group_masking",
+      "normal_sample_size": 5000,
+      "temporal_block_ratio": 0.25,
+      "feature_group_ratio": 0.4,
+      "block_len": 8,
+      "group_len": 2,
+      "top_time_starts": [
+        22,
+        21,
+        20,
+        2,
+        3
+      ],
+      "top_feature_groups": [
+        [
+          "RealPower",
+          "SetPower"
+        ],
+        [
+          "SetPower",
+          "Speed"
+        ],
+        [
+          "Speed",
+          "Length"
+        ],
+        [
+          "GateOnTime",
+          "SetPower"
+        ]
+      ],
+      "feature_scores": {
+        "RealPower": 0.5583903193473816,
+        "GateOnTime": 0.11019281297922134,
+        "SetPower": 0.12541624903678894,
+        "Speed": 0.12428056448698044,
+        "Length": 0.12437879294157028
+      }
+    },
+    "masking_diffusion_denoiser": "Masking Diffusion uses a GRU temporal denoiser conditioned on the masked seed window and the binary mask, rather than flattening the window into an MLP denoiser.",
+    "n_real": 247,
+    "n_generated_per_method": 1000,
+    "n_generated_shown_in_tsne": 247,
+    "temporal_block_ratio": 0.25,
+    "feature_group_ratio": 0.4,
+    "residual_scale": 0.35,
+    "quality_ranking": [
+      "Masking GT-GAN",
+      "Masking Diffusion",
+      "Diffusion",
+      "GT-GAN"
+    ]
+  },
+  "quality_ranking_from_research02": [
+    "Masking GT-GAN",
+    "Masking Diffusion",
+    "Diffusion",
+    "GT-GAN"
+  ],
+  "performance_ranking_by_final_f2": [
+    "Masking Diffusion",
+    "Masking Diffusion",
+    "Diffusion",
+    "Diffusion",
+    "Diffusion",
+    "Masking Diffusion",
+    "Real anomaly only",
+    "GT-GAN",
+    "Masking GT-GAN",
+    "GT-GAN",
+    "GT-GAN",
+    "Masking GT-GAN",
+    "Masking GT-GAN",
+    "Masking Diffusion",
+    "Diffusion",
+    "GT-GAN",
+    "Masking GT-GAN",
+    "GT-GAN",
+    "Diffusion",
+    "Masking GT-GAN",
+    "Masking Diffusion"
+  ],
+  "best_method_by_final_f2": "Masking Diffusion",
+  "best_result_by_final_f2": {
+    "method": "Masking Diffusion",
+    "model": "RandomForestClassifier",
+    "normal_train_used": 5000,
+    "real_anomaly_seed_used": 247,
+    "generated_anomaly_used": 1000,
+    "total_train_rows": 6247,
+    "threshold_strategy": "best_validation_f2",
+    "target_recall": null,
+    "fbeta_beta": 2.0,
+    "threshold_selected_on_real_validation": 0.7899999999999999,
+    "validation_precision": 0.5909090909090909,
+    "validation_recall": 0.7926829268292683,
+    "validation_f1": 0.6770833333333334,
+    "validation_f2": 0.7420091324200914,
+    "validation_recall_target_met": false,
+    "precision": 0.5957446808510638,
+    "recall": 0.9459459459459459,
+    "f1": 0.7310704960835509,
+    "f2": 0.8464328899637243,
+    "auroc": 0.9901171818137706,
+    "auprc": 0.9376153124117789,
+    "pred_normal": 2611,
+    "pred_anomaly": 470,
+    "true_normal": 2785,
+    "true_anomaly": 296
+  },
+  "best_classification_report": {
+    "normal": {
+      "precision": 0.9938720796629644,
+      "recall": 0.9317773788150808,
+      "f1-score": 0.9618235730170497,
+      "support": 2785.0
+    },
+    "anomaly": {
+      "precision": 0.5957446808510638,
+      "recall": 0.9459459459459459,
+      "f1-score": 0.7310704960835509,
+      "support": 296.0
+    },
+    "accuracy": 0.9331385913664395,
+    "macro avg": {
+      "precision": 0.7948083802570141,
+      "recall": 0.9388616623805134,
+      "f1-score": 0.8464470345503003,
+      "support": 3081.0
+    },
+    "weighted avg": {
+      "precision": 0.9556229040549401,
+      "recall": 0.9331385913664395,
+      "f1-score": 0.9396545010364215,
+      "support": 3081.0
+    }
+  }
+}

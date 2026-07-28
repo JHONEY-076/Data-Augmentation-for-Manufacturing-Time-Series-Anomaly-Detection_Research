@@ -1,0 +1,35 @@
+{
+  "best_method": "Baseline original only",
+  "best_result": {
+    "method": "Baseline original only",
+    "n_generated_used": 0,
+    "model": "IsolationForest",
+    "n_estimators": 100,
+    "max_samples": 0.8,
+    "threshold_percentile": 10,
+    "threshold": -0.04175091886349713,
+    "validation_f1": 0.6038961038961039,
+    "precision": 0.3888888888888889,
+    "recall": 0.4966216216216216,
+    "f1": 0.4362017804154303,
+    "auroc": 0.874887185210345,
+    "auprc": 0.5231471818964942,
+    "pred_normal": 2703,
+    "pred_anomaly": 378,
+    "true_normal": 2785,
+    "true_anomaly": 296
+  },
+  "quality_ranking": [
+    "Masking Diffusion",
+    "Masking GT-GAN",
+    "Diffusion",
+    "GT-GAN"
+  ],
+  "performance_ranking": [
+    "Baseline original only",
+    "Masking Diffusion",
+    "Masking GT-GAN",
+    "GT-GAN",
+    "Diffusion"
+  ]
+}

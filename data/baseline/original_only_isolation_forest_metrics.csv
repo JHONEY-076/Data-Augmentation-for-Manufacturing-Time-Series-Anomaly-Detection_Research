@@ -1,2 +1,0 @@
-model,data,features,window_size,stride,threshold_percentile,precision,recall,f1,auroc,auprc
-IsolationForest,original_only,"RealPower,GateOnTime,SetPower,Speed,Length",30,1,5,0.30416156670746636,0.6009673518742442,0.4039008533116619,0.7693067358621766,0.5590666324282354

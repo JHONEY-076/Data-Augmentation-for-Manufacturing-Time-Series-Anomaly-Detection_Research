@@ -1,0 +1,2 @@
+model,n_estimators,max_samples,n_neighbors,nu,gamma,threshold_percentile,threshold,final_pred_normal,final_pred_anomaly,precision,recall,f1,auroc,auprc
+LocalOutlierFactor,,,10,,,1,-9.774378,2726,355,0.8338028169014085,1.0,0.9093701996927803,1.0,1.0

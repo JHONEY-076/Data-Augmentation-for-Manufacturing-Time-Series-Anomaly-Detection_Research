@@ -74,7 +74,7 @@ tools/
    ![Balanced and imbalanced augmentation scores](data/research05/figures/balanced_vs_imbalanced_scores.png)
 
 5. **Research07: Portfolio Robustness Analysis**
-   - 포트폴리오 제출용으로 임계값 강건성, 반복 실행 안정성, 불량 seed 부족 조건을 추가 분석했습니다.
+   -  임계값 강건성, 반복 실행 안정성, 불량 seed 부족 조건을 추가 분석
    - 단일 최고 점수만 제시하지 않고, 실제 적용 시 선택 가능한 임계값 폭과 seed 수 변화에 따른 성능 변화를 함께 정리했습니다.
 
    ![Threshold robustness comparison](data/research07/figures/research07_threshold_robustness_comparison.png)
